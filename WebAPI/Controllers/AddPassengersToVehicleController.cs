@@ -56,7 +56,7 @@ namespace WebApplication1.Controllers
         }
 
         //Would be incorrect to have this block of code 3 times ( problematic in the moment in which we want to change part of this logic) 
-        // > encapsulated logic into a different method that has the responsibility of generating a list people
+        //encapsulated logic into a different method that has the responsibility of generating a list people)
         private List<Person> genPeopleArray(int number)
         {
             var people = new List<Person>();
