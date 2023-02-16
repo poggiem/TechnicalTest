@@ -9,6 +9,6 @@ namespace ConsoleApp1.Models
     public class Person
     {
         public string FullName { get; set; }
-        public int GoodPersonPoints { get; set; }
+        public long GoodPersonPoints { get; set; }
     }
 }
