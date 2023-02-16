@@ -13,14 +13,7 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                var people = new List<Person>();
-
-                for (int i = 0; i < number; i++)
-                {
-                    people.Add(new Person());
-                }
-
-                new Car().Start(people);
+                new Car().Start(genPeopleArray(number));
 
                 return Ok();
             }
@@ -35,14 +28,8 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                var people = new List<Person>();
 
-                for (int i = 0; i < number; i++)
-                {
-                    people.Add(new Person());
-                }
-
-                new MotorBike().Start(people);
+                new MotorBike().Start(genPeopleArray(number));
 
                 return Ok();
             }
@@ -57,14 +44,8 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                var people = new List<Person>();
 
-                for (int i = 0; i < number; i++)
-                {
-                    people.Add(new Person());
-                }
-
-                new Coach().Start(people);
+                new Coach().Start(genPeopleArray(number));
 
                 return Ok();
             }
@@ -73,5 +54,19 @@ namespace WebApplication1.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        //Would be incorrect to have this block of code 3 times ( problematic in the moment in which we want to change part of this logic) 
+        //encapsulated logic into a different method that has the responsibility of generating a list people)
+        private List<Person> genPeopleArray(int number)
+        {
+            var people = new List<Person>();
+
+            for (int i = 0; i < number; i++)
+            {
+                people.Add(new Person());
+            }
+            return people;
+        }
     }
+
 }
